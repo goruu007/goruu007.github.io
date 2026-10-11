@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gaurav Raikwar</title>
+<meta name="description" content="Gaurav Raikwar — AI/ML engineer working on satellite ocean data, SST super-resolution and remote sensing at SAC, ISRO.">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/170036096?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+  // Set theme before paint to avoid a flash
+  try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<style>
+  :root {
+    --bg: #fdfdfd; --fg: #282728; --accent: #006cac; --muted: #e6e6e6; --border: #ece9e9; --dim: #6b6b6b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #212737; --fg: #eaedf3; --accent: #ff6b01; --muted: #343f60; --border: #ab4b08; --dim: #a7adbd; }
+  }
+  :root[data-theme="dark"] { --bg: #212737; --fg: #eaedf3; --accent: #ff6b01; --muted: #343f60; --border: #ab4b08; --dim: #a7adbd; }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: "IBM Plex Mono", ui-monospace, monospace; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: var(--bg); }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 2px dashed var(--accent); outline-offset: 2px; }
+  .wrap { max-width: 48rem; margin: 0 auto; padding: 0 16px; }
+
+  /* header */
+  header .wrap:first-child { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; padding-top: 24px; padding-bottom: 24px; }
+  .logo { font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+  nav { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  nav a { text-decoration: none; font-weight: 500; }
+  nav a:hover { color: var(--accent); }
+  .icon-btn { background: none; border: 0; color: var(--fg); cursor: pointer; padding: 4px; display: inline-flex; }
+  .icon-btn:hover { color: var(--accent); }
+  svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .sun { display: none; }
+  :root[data-theme="dark"] .sun { display: block; } :root[data-theme="dark"] .moon { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .sun { display: block; } :root:not([data-theme="light"]) .moon { display: none; }
+  }
+  hr { border: 0; border-top: 1px solid var(--border); margin: 0; }
+
+  /* hero */
+  .hero { padding: 32px 0 24px; }
+  .hero-top { display: flex; align-items: center; gap: 16px; }
+  .hero img { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--border); }
+  h1 { font-size: clamp(1.8rem, 6vw, 3rem); margin: 0; line-height: 1.2; }
+  .hero p { margin: 16px 0; }
+  .hero strong { color: var(--accent); font-weight: 500; }
+  .socials { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; margin-top: 16px; }
+  .socials span { font-weight: 500; margin-right: 8px; }
+  .socials a { padding: 6px; display: inline-flex; }
+  .socials a:hover { color: var(--accent); }
+
+  /* sections */
+  section { padding: 32px 0 24px; }
+  h2 { font-size: 1.6rem; margin: 0 0 16px; }
+  ul.list { list-style: none; padding: 0; margin: 0; }
+  ul.list li { margin: 24px 0; }
+  .title { color: var(--accent); font-size: 1.15rem; font-weight: 500; text-decoration: underline; text-decoration-style: dashed; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .title:hover { text-decoration-style: solid; }
+  .meta { display: flex; align-items: center; gap: 6px; font-size: .9rem; color: var(--dim); font-style: italic; margin: 4px 0; }
+  .meta svg { width: 16px; height: 16px; }
+  .desc { margin: 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .tags span { font-size: .85rem; border: 1px solid var(--border); padding: 0 8px; border-radius: 4px; }
+  .more { display: inline-flex; align-items: center; gap: 4px; font-weight: 500; text-decoration: none; margin-top: 8px; }
+  .more:hover { color: var(--accent); }
+  .more svg { width: 18px; height: 18px; }
+  .stack p { margin: 4px 0; }
+  .stack b { color: var(--accent); font-weight: 500; }
+
+  #about p { margin: 0 0 16px; }
+  .chart { width: 100%; display: block; padding: 12px; background: #fff; border: 1px solid var(--border); border-radius: 6px; }
+  #events li { margin: 12px 0; }
+  #events .meta { margin: 0; }
+
+  footer .wrap:last-child { display: flex; flex-direction: column; align-items: center; gap: 8px; padding-top: 24px; padding-bottom: 32px; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">gaurav.raikwar</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#activity">Activity</a>
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark mode">
+        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
+  </div>
+  <div class="wrap"><hr></div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="hero-top">
+      <img src="https://avatars.githubusercontent.com/u/170036096?v=4" alt="Gaurav Raikwar">
+      <h1>Namaste 🙏</h1>
+    </div>
+    <p>I'm <strong>Gaurav Raikwar</strong>, an AI/ML and application engineer in Ahmedabad.
+      Right now I'm an Application Engineer at <strong>Komoline Aerospace Limited</strong>, building calibration software for hardware and software sensors.
+      Before that I was at <strong>SAC, ISRO</strong>, sharpening coarse Sea Surface Temperature maps with deep learning.</p>
+    <p>I like problems where physics meets code: sensor drift, ocean fronts, signals that need cleaning up before anyone can trust them.
+      Everything I build ends up on GitHub, so feel free to fork it and take it further.</p>
+    <div class="socials">
+      <span>Find me:</span>
+      <a href="https://github.com/goruu007" aria-label="GitHub" title="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/007gaurav" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>
+      </a>
+    </div>
+  </div>
+  <hr>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I studied AI &amp; Robotics, and I've ended up somewhere between machine learning and hardware.
+      Most of my work is about one question: <em>can we trust this number?</em> That might be a reading from a
+      sensor on an aerospace part, or a pixel in a satellite temperature map.</p>
+    <p>At Komoline I build the software that calibrates sensors: it measures how far they drift, fits corrections,
+      and checks the result against reference data. At ISRO I worked on the satellite side, training ESRGAN-style
+      models and building the data pipelines that feed them.</p>
+    <p>Outside work I like ocean dynamics, PyTorch experiments, and making small tools that save someone an afternoon.</p>
+  </section>
+  <hr>
+
+  <section id="work">
+    <h2>Experience</h2>
+    <ul class="list">
+      <li>
+        <span class="title">Application Engineer · Komoline Aerospace Limited</span>
+        <div class="meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/></svg>Current · Ahmedabad</div>
+        <p class="desc">Building calibration software for hardware and software sensors: data acquisition, error modelling, correction curves and validation reports.</p>
+        <div class="tags"><span>calibration</span><span>sensors</span><span>python</span><span>signal processing</span></div>
+      </li>
+      <li>
+        <span class="title">Apprentice Trainee · SAC, ISRO</span>
+        <div class="meta"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/></svg>Ahmedabad</div>
+        <p class="desc">SST super-resolution with ESRGAN and physics-informed models. Worked with MODIS, TMI and FSLE datasets to better detect ocean fronts, eddies and filaments.</p>
+        <div class="tags"><span>pytorch</span><span>esrgan</span><span>remote sensing</span></div>
+      </li>
+      <li>
+        <span class="title">B.Tech · AI &amp; Robotics</span>
+        <p class="desc">Deep learning, computer vision and the maths underneath them.</p>
+      </li>
+    </ul>
+  </section>
+  <hr>
+
+  <section id="projects">
+    <h2>Featured</h2>
+    <ul class="list">
+      <li>
+        <a class="title" href="https://github.com/goruu007/SST-Patch-Generator">SST Patch Generator</a>
+        <div class="meta"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Oct 2, 2026</div>
+        <p class="desc">Builds matched coarse/sharp training pairs from two satellite SST products (same place, same day), cleans them, keeps only the pairs that agree, and splits them for super-resolution training.</p>
+        <div class="tags"><span>python</span><span>xarray</span><span>super-resolution</span></div>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/goruu007/ocean-vorticity-strain-analysis">Ocean Vorticity &amp; Strain Analysis</a>
+        <div class="meta"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Mar 24, 2026</div>
+        <p class="desc">Computes strain rate and normalized relative vorticity from zonal and meridional velocity fields in NetCDF ocean current data.</p>
+        <div class="tags"><span>netcdf</span><span>oceanography</span><span>numpy</span></div>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/goruu007/goruu007-SST-datasets-Plot-and-Comparison">SST Datasets: TMI vs Aqua MODIS</a>
+        <div class="meta"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Mar 24, 2026</div>
+        <p class="desc">Side-by-side comparison and visualization of Sea Surface Temperature from TMI and Aqua MODIS over the Indian Ocean.</p>
+        <div class="tags"><span>xarray</span><span>matplotlib</span><span>remote-sensing</span></div>
+      </li>
+    </ul>
+  </section>
+  <hr>
+
+  <section>
+    <h2>Other work</h2>
+    <ul class="list">
+      <li>
+        <a class="title" href="https://github.com/goruu007/Pytorch">PyTorch fundamentals</a>
+        <p class="desc">Tensors, operations and neural networks from scratch.</p>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/goruu007/ANN-classification">ANN Classification</a>
+        <p class="desc">Artificial neural network for tabular classification.</p>
+      </li>
+      <li>
+        <a class="title" href="https://github.com/goruu007/SQL-Python-Ecommerce-Project">SQL + Python E-commerce Analysis</a>
+        <p class="desc">End-to-end analysis of an e-commerce dataset with SQL queries and Python.</p>
+      </li>
+    </ul>
+    <a class="more" href="https://github.com/goruu007?tab=repositories">All repositories
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </section>
+  <hr>
+
+  <section id="activity">
+    <h2>GitHub Activity</h2>
+    <a href="https://github.com/goruu007"><img class="chart" src="https://ghchart.rshah.org/006cac/goruu007" alt="GitHub contribution graph for goruu007" loading="lazy"></a>
+    <ul class="list" id="events"><li class="meta">Loading recent activity…</li></ul>
+  </section>
+  <hr>
+
+  <section class="stack">
+    <h2>Toolbox</h2>
+    <p><b>Sensors</b> Calibration, error modelling, curve fitting, data acquisition</p>
+    <p><b>Languages</b> Python, C/C++, Shell</p>
+    <p><b>AI/ML</b> PyTorch, TensorFlow, OpenCV, GANs, super-resolution</p>
+    <p><b>Geo</b> xarray, Rasterio, GeoPandas, GDAL, NetCDF</p>
+    <p><b>Data</b> Sentinel-2, MODIS, TMI, FSLE</p>
+    <p><b>Tools</b> Linux, Git, Docker, Jupyter</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><hr></div>
+  <div class="wrap">
+    <div>I work on space data while sitting on Earth 🌍</div>
+    <div>© <span id="year">2026</span> Gaurav Raikwar</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Recent public activity (GitHub API, unauthenticated: 60 req/hour per visitor IP)
+  const verbs = { PushEvent: "Pushed to", CreateEvent: "Created", WatchEvent: "Starred", ForkEvent: "Forked", IssuesEvent: "Opened an issue in", PullRequestEvent: "Opened a PR in", PublicEvent: "Open-sourced" };
+  const list = document.getElementById("events");
+  fetch("https://api.github.com/users/goruu007/events/public?per_page=30")
+    .then(r => r.ok ? r.json() : Promise.reject())
+    .then(events => {
+      const items = events.filter(e => verbs[e.type]).slice(0, 6);
+      if (!items.length) throw 0;
+      list.innerHTML = "";
+      for (const e of items) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.className = "title";
+        a.href = "https://github.com/" + e.repo.name;
+        a.textContent = e.repo.name.split("/")[1];
+        const n = e.type === "PushEvent" && e.payload.size ? ` ${e.payload.size} commit${e.payload.size > 1 ? "s" : ""}` : "";
+        li.append(verbs[e.type] + " ", a);
+        const m = document.createElement("div");
+        m.className = "meta";
+        m.textContent = new Date(e.created_at).toLocaleDateString("en", { month: "short", day: "numeric", year: "numeric" }) + n;
+        li.append(m);
+        list.append(li);
+      }
+    })
+    .catch(() => { list.innerHTML = '<li><a class="title" href="https://github.com/goruu007">See my activity on GitHub</a></li>'; });
+  document.getElementById("theme").addEventListener("click", () => {
+    const root = document.documentElement;
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  });
+</script>
+</body>
+</html>
